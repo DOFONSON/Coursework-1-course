@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <aside class="header">
+        <img class="header__logo_img" src="{% static 'main/img/logo.png' %}" alt="Лого">
+        <nav>
+            <ul class="nav__list">
+                <li><a href="{% url 'home' %}"><img src="{% static 'main/img/home.png' %}" alt="home icon" class="nav__icon"> Главная</a></li>
+                <li><a href="{% url 'range' %}"><img src="{% static 'main/img/store.png' %}" alt="store icon" class="nav__icon"> Ассортимент</a></li>
+                <li><a href="{% url 'about' %}"><img src="{% static 'main/img/info.png' %}" alt="info icon" class="nav__icon"> Про нас</a></li>
+                <li><a href="{% url 'contact' %}"><img src="{% static 'main/img/contact-us.png' %}" alt="contact icon" class="nav__icon"> Контакты</a></li>
+                <li><a href="{% url 'profile' %}"><img src="{% static 'main/img/profile-user.png' %}" alt="profile icon" class="nav__icon"> Профиль</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="footer">
+        <p>© ООО "BJ Ge Drenoille" 2024 Все права защищены</p>
+        <img class="header__logo_img" src="{% static 'main/img/logo.png' %}" alt="Лого">
+        <a href="http://tnazaroff.ru" target="_blank" class="footer__link">Разработка сайта: tnazaroff.ru</a>
+    </footer>
+</body>
+</html>
