@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+{{ title }}    
+{% endblock %}
+{% block content %}
+<h1>{{ title }}</h1>
+{% for el in data %}
+<div class="card">
+    <h3>{{ el.title }}</h3>
+    <p>{{ el.anons }}</p>
+    <p>{{ el.price }}</p>
+</div>
+{% endfor %}
+{% endblock %}
